@@ -1,0 +1,58 @@
+import matplotlib.pyplot as plt
+def calculate_element_composition(composition):
+    total_mass = sum(composition.values())
+    element_composition = {element: (mass / total_mass) * 100 for element, mass in composition.items()}
+    return element_composition
+# Example alloy composition data for three different alloys (elemental masses in grams)
+alloy1_composition = {'Iron': 200, 'Chromium': 50, 'Manganese': 30, 'Nickel': 20, 'Carbon': 10}
+alloy2_composition = {'Copper': 300, 'Zinc': 100}
+alloy3_composition = {'Titanium': 400, 'Aluminum': 50, 'Vanadium': 30}
+# Calculate composition of each element for Alloy 1
+alloy1_element_composition = calculate_element_composition(alloy1_composition)
+# Calculate composition of each element for Alloy 2
+alloy2_element_composition = calculate_element_composition(alloy2_composition)
+# Calculate composition of each element for Alloy 3
+alloy3_element_composition = calculate_element_composition(alloy3_composition)
+# Print the results for Alloy 1
+print("Composition of Each Element in Alloy 1:")
+for element, composition in alloy1_element_composition.items():
+    print(f"{element}: {composition:.2f}%")
+# Print the results for Alloy 2
+print("\nComposition of Each Element in Alloy 2:")
+for element, composition in alloy2_element_composition.items():
+    print(f"{element}: {composition:.2f}%")
+# Print the results for Alloy 3
+print("\nComposition of Each Element in Alloy 3:")
+for element, composition in alloy3_element_composition.items():
+    print(f"{element}: {composition:.2f}%")
+def calculate_element_composition(composition):
+    total_mass = sum(composition.values())
+    element_composition = {element: (mass / total_mass) * 100 for element, mass in composition.items()}
+    return element_composition
+def plot_element_composition(composition, alloy_name):
+    plt.figure(figsize=(8, 6))
+    plt.bar(composition.keys(), composition.values(), color='skyblue')
+    plt.title(f'Composition of Each Element in {alloy_name}')
+    plt.xlabel('Element')
+    plt.ylabel('Composition (%)')
+    plt.xticks(rotation=45)
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    plt.show()
+# Example alloy composition data for three different alloys (elemental masses in grams)
+alloy1_composition = {'Iron': 200, 'Chromium': 50, 'Manganese': 30, 'Nickel': 20, 'Carbon': 10}
+alloy2_composition = {'Copper': 300, 'Zinc': 100}
+alloy3_composition = {'Titanium': 400, 'Aluminum': 50, 'Vanadium': 30}
+# Calculate composition of each element for Alloy 1
+alloy1_element_composition = calculate_element_composition(alloy1_composition)
+# Calculate composition of each element for Alloy 2
+alloy2_element_composition = calculate_element_composition(alloy2_composition)
+# Calculate composition of each element for Alloy 3
+alloy3_element_composition = calculate_element_composition(alloy3_composition)
+# Plot the results for Alloy 1
+plot_element_composition(alloy1_element_composition, "Alloy 1")
+# Plot the results for Alloy 2
+plot_element_composition(alloy2_element_composition, "Alloy 2")
+
+# Plot the results for Alloy 3
+plot_element_composition(alloy3_element_composition, "Alloy 3")
